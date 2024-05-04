@@ -1,5 +1,6 @@
 package sistema_farmacia;
 public class TabelaDePreco {
+    
     float diPreco =   2.00f;
     float omPreco =   4.00f;
     float dorPreco =  5.00f;
