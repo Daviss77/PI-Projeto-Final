@@ -6,9 +6,10 @@ public class Interacao{
 
     public static TabelaDePreco escolha(){
         TabelaDePreco preco = new TabelaDePreco();
+        Motoboy entrega = new Motoboy();
         System.out.println("\n=)--- SISTEMA DE COMPRAS ---(=\n");
         String escolha;
-        float valor = 0f;
+        entrega.valor = 0f;
             do{
             System.out.println("Escreva (VOLTAR) para ter acesso a tabela de preços");
             System.out.println("Escreva (SAIR) para fechar o sistema de compras");
@@ -18,20 +19,20 @@ public class Interacao{
             
             switch (escolha) {
                 case "dipirona":
-                    valor += preco.diPreco;
-                    System.out.println("Compra realizada com sucesso, total:\n " + valor);
+                    entrega.valor += preco.diPreco;
+                    System.out.println("Compra realizada com sucesso, total:\n " + entrega.valor);
                     break;
                 case "dorflex":
-                    valor += preco.dorPreco;
-                    System.out.println("Compra realizada com sucesso, total:\n " + valor);
+                    entrega.valor += preco.dorPreco;
+                    System.out.println("Compra realizada com sucesso, total:\n " + entrega.valor);
                     break;
                 case "omeprazol":
-                    valor += preco.omPreco;
-                    System.out.println("Compra realizada com sucesso, total:\n " + valor);
+                    entrega.valor += preco.omPreco;
+                    System.out.println("Compra realizada com sucesso, total:\n " + entrega.valor);
                     break;
                 case "benegripe":
-                    valor += preco.benPreco;
-                    System.out.println("Compra realizada com sucesso, total:\n " + valor);
+                    entrega.valor += preco.benPreco;
+                    System.out.println("Compra realizada com sucesso, total:\n " + entrega.valor);
                     break;
                         case "ozempic":
                                 System.out.println("Voce tem a receita?");
@@ -41,8 +42,8 @@ public class Interacao{
                             int escolhaOzmp = LerDados.lerInt(escolha);
                     switch(escolhaOzmp) {
                         case 1:
-                            valor += preco.ozePreco;
-                            System.out.println("Compra de Ozempic realizada com sucesso, total: " + valor);
+                            entrega.valor += preco.ozePreco;
+                            System.out.println("Compra de Ozempic realizada com sucesso, total: " + entrega.valor);
                             break;
                         case 2:
                             System.out.println("Infelizmente a compra de Ozempic não pode ser realizada sem receita.");
@@ -55,24 +56,24 @@ public class Interacao{
                     }
                     break;
                 case "strepsils":
-                    valor += preco.sprePreco;
-                    System.out.println("Compra realizada com sucesso, total:\n " + valor);
+                    entrega.valor += preco.sprePreco;
+                    System.out.println("Compra realizada com sucesso, total:\n " + entrega.valor);
                     break;
                 case "rinosoro":
-                    valor += preco.rinoPreco;
-                    System.out.println("Compra realizada com sucesso, total:\n " + valor);
+                    entrega.valor += preco.rinoPreco;
+                    System.out.println("Compra realizada com sucesso, total:\n " + entrega.valor);
                     break;
                 case "cimegripe":
-                    valor += preco.cimPreco;
-                    System.out.println("Compra realizada com sucesso, total:\n " + valor);
+                    entrega.valor += preco.cimPreco;
+                    System.out.println("Compra realizada com sucesso, total:\n " + entrega.valor);
                     break;
                 case "prednisona":
-                    valor += preco.predPreco;
-                    System.out.println("compra realizada com sucesso, total:\n" + valor);
+                    entrega.valor += preco.predPreco;
+                    System.out.println("compra realizada com sucesso, total:\n" + entrega.valor);
                     break;
                 case "fluoxetina":
-                    valor += preco.fluoPreco;
-                    System.out.println("compra realizada com sucesso, total:\n" + valor);
+                    entrega.valor += preco.fluoPreco;
+                    System.out.println("compra realizada com sucesso, total:\n" + entrega.valor);
                     break;
                 case "sair":
                     System.out.println("Sistema de compras finalizado com sucesso");
@@ -82,7 +83,36 @@ public class Interacao{
                     break;
                 }
             } while (!escolha.equals("sair"));
-            System.out.println("O valor total da compra é: " + valor);
+            // System.out.println("O valor total da compra é: " + valor);
+
+            System.out.println("O pedido vai ser via MotoBoy? digite ( S ) para entrar no sistema ou ( X ) para finalização da compra");
+            String motoBoy = LerDados.lerTexto();
+            motoBoy = motoBoy.toLowerCase();
+                if(motoBoy.equals("s")){
+                    
+                    System.out.println("Você é de qual região de São Paulo?\n Centro( C )\nSul( S )\nLeste( L )\nOeste( O )\nNorte( N )");
+                    String regiao = LerDados.lerTexto();
+                    regiao = regiao.toUpperCase();
+                    switch (regiao) {
+                        case "C" :
+                            entrega.rotaCentro();
+                            break;
+                        case "S":
+                            entrega.rotasSul();
+                            break;
+                        case "L":
+                            entrega.rotaLeste();
+                            break;
+                        case "O":
+                            entrega.rotaOeste();
+                            break;
+                        case "N":
+                            entrega.rotaNorte();
+                        default: ""
+                            break;
+                    }
+                }
+
                 return preco;
         }
 }

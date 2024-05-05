@@ -12,7 +12,6 @@ public class InfoRemedios {
         Medicamento rinosoro = new Medicamento();
         rinosoro.info = "•luidificante e descongestionante nasal, sem vasoconstritor. Útil antes das mamadas. Facilita a respiração durante o sono.\n•Anti-séptico nasal. Descongestionante e anti-séptico para nebulização nasal. No tratamento auxiliar das rinites que acompanham gripes e resfriados.\n•Gire a tampa para romper o lacre de segurança. Utilize-a para o fechamento do frasco.";
         rinosoro.dosagem = "Não possue uma dosagem específica ";
-
         rinosoro.modoDeUSo = "1.Retire a capa protetora do conta-gotas.\n2.Aspire o líquido pressionando a parte superior de borracha do conta-gotas e instile seu conteúdo nas narinas. Evite introduzir o conta-gotas nas narinas.\n3.Para guardar o medicamento, recoloque a tampa de plástico fechando bem o frasco. O frasco deve ser guardado no interior do cartucho. Lavar o conta gotas em água corrente e recolocar na capa protetora. Não usar sabão ou detergente. Evite deixar o conta-gotas no interior do frasco após o uso.";
         
         Medicamento cimegripe = new Medicamento();
