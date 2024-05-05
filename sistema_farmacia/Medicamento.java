@@ -6,10 +6,7 @@ public class Medicamento {
         String modoDeUSo;
         String corTarja;
         int    quantidade;
-
-        void status(){
-            System.out.println(this.info);
-        }
+        
         static class KitUniversitario{
             String dorflex;
             String chocolate;
@@ -17,5 +14,5 @@ public class Medicamento {
             String remedioBarriga;
             String bala;
         }
-}
-        
+
+    }

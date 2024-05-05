@@ -1,15 +1,14 @@
 package sistema_farmacia;
+import lerdados.LerDados;
 
-import java.util.Scanner;
 
 public class Principal{
     public static void main(String[] args){
-        
     Usuario.cadastrarUsuario();
-
     System.out.println("\nUSUÁRIO CADASTRADO COM SUCESSO!\n");
-
     TabelaDePreco.dadosDePreco();
+    Interacao.escolha();
+    
 }
 
 public static class Usuario{
@@ -22,23 +21,21 @@ public static class Usuario{
         
 
     private static Usuario cadastrarUsuario() {
-        Scanner scanner = new Scanner(System.in);
 
         Usuario novoUsuario = new Usuario();
-
         boolean entradaInvalida = false;
         boolean entradaInvalida2 = false;
         
         System.out.println("Cadastro de Usuário:");
         System.out.print("Nome completo: ");
-        novoUsuario.nomeCompleto = scanner.nextLine();
+        novoUsuario.nomeCompleto = LerDados.lerTexto();
 
         System.out.print("Data de nascimento: ");
-        novoUsuario.dataNascimento = scanner.nextLine();
+        novoUsuario.dataNascimento = LerDados.lerTexto();
         
         while(!entradaInvalida){
             System.out.print("CPF: ");
-            novoUsuario.cpf = scanner.nextLine();
+            novoUsuario.cpf = LerDados.lerTexto();;
             try{
                Long.parseLong(novoUsuario.cpf);
                 entradaInvalida = true;
@@ -49,15 +46,15 @@ public static class Usuario{
         System.out.println("Correto! Pode continuar");
         
         System.out.print("Endereço: ");
-        novoUsuario.endereco = scanner.nextLine();
+        novoUsuario.endereco = LerDados.lerTexto();
         
         
         System.out.print("E-mail: ");
-        novoUsuario.email = scanner.nextLine();
+        novoUsuario.email = LerDados.lerTexto();
 
         while(!entradaInvalida2){
             System.out.print("Telefone: ");
-            novoUsuario.telefone = scanner.nextLine();
+            novoUsuario.telefone = LerDados.lerTexto();
             try{
                Long.parseLong(novoUsuario.telefone);
                 entradaInvalida2 = true;
@@ -65,7 +62,6 @@ public static class Usuario{
                     System.out.println("Erro! Digite números inteiros");
             }
         }
-        scanner.close();
         return novoUsuario;
     }
     
