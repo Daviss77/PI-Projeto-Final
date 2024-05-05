@@ -10,8 +10,8 @@ public class Motoboy {
     public Motoboy rotasSul(){
         Motoboy entrega = new Motoboy();
         entrega.valor = valor;
-        entrega.frete = 20;
-        entrega.tempo = 15;
+        frete = 20;
+        tempo = 15;
         contaTotal = valor + frete;
         statusEntrega();
         return entrega;
@@ -19,7 +19,7 @@ public class Motoboy {
     public void rotaNorte(){
         Motoboy entrega = new Motoboy();
         entrega.valor = valor;
-        entrega.frete = 30;
+        frete = 30;
         tempo = 40;
         contaTotal = valor + frete;
         statusEntrega();
@@ -27,7 +27,7 @@ public class Motoboy {
     public void rotaLeste(){
         Motoboy entrega = new Motoboy();
         entrega.valor = valor;
-        entrega.frete = 25;
+        frete = 25;
         tempo = 30;
         contaTotal = valor + frete;
         statusEntrega();
@@ -35,7 +35,7 @@ public class Motoboy {
     public void rotaOeste(){
         Motoboy entrega = new Motoboy();
         entrega.valor = valor;
-        entrega.frete = 35;
+        frete = 35;
         tempo = 60;
         contaTotal = valor + frete;
         statusEntrega();
@@ -43,14 +43,14 @@ public class Motoboy {
     public void rotaCentro(){
         Motoboy entrega = new Motoboy();
         entrega.valor = valor;
-        entrega.frete = 35;
+        frete = 35;
         tempo = 25;
         contaTotal = valor + frete;
         statusEntrega();
     }
     public void statusEntrega(){
-        System.out.println("Estimativa de entrega para região" + this.tempo + " minutos;");
-        System.out.println("Frete para região" + this.frete + " reais.");
-        System.out.println("O valor total da compra foi de " + this.valor);
+        System.out.println("Estimativa de entrega para região " + this.tempo + " minutos;");
+        System.out.println("Frete para região " + this.frete + " reais.");
+        System.out.println("O valor total da compra foi de " + this.contaTotal + "reais.");
     }
 }

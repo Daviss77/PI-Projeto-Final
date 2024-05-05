@@ -84,34 +84,37 @@ public class Interacao{
                 }
             } while (!escolha.equals("sair"));
             // System.out.println("O valor total da compra é: " + valor);
-
+            
+            String motoBoy;
+            do{
             System.out.println("O pedido vai ser via MotoBoy? digite ( S ) para entrar no sistema ou ( X ) para finalização da compra");
-            String motoBoy = LerDados.lerTexto();
+            motoBoy = LerDados.lerTexto();
             motoBoy = motoBoy.toLowerCase();
-                if(motoBoy.equals("s")){
-                    
-                    System.out.println("Você é de qual região de São Paulo?\n Centro( C )\nSul( S )\nLeste( L )\nOeste( O )\nNorte( N )");
+            if(motoBoy.equals("s")){
+                
+                    System.out.println("Você é de qual região de São Paulo?\n--- DIGITE A REGIÃO CORRESPONDENTE ---\n Centro\nSul\nLeste\nOeste\nNorte");
                     String regiao = LerDados.lerTexto();
-                    regiao = regiao.toUpperCase();
+                    regiao = regiao.toLowerCase();
                     switch (regiao) {
-                        case "C" :
+                        case "centro" :
                             entrega.rotaCentro();
                             break;
-                        case "S":
+                        case "sul":
                             entrega.rotasSul();
                             break;
-                        case "L":
+                        case "leste":
                             entrega.rotaLeste();
                             break;
-                        case "O":
+                        case "oeste":
                             entrega.rotaOeste();
                             break;
-                        case "N":
+                        case "norte":
                             entrega.rotaNorte();
-                        default: ""
+                        default: 
+                                System.out.println( regiao + " Valor não encontrado! Digite novamente.");
                             break;
-                    }
-                }
+                        }
+                    }}while (!motoBoy.equals("s"));
 
                 return preco;
         }
