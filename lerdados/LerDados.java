@@ -11,9 +11,13 @@ import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
 import java.util.Scanner;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class LerDados {
-
+    
     private static final Scanner scan = new Scanner(System.in);
     private static final DateTimeFormatter DATA = DateTimeFormatter
             .ofPattern("dd/MM/uuuu")
@@ -25,16 +29,28 @@ public class LerDados {
             .withChronology(IsoChronology.INSTANCE)
             .withResolverStyle(ResolverStyle.STRICT);
 
-    public static int lerInt(String tenteNovamente) {
-        while (true) {
-            var linha = scan.nextLine();
+    public static int lerInt() {        
+
+        Scanner ler = new Scanner(System.in);        
+
+        while(true){
+
+            var linha = ler.nextLine();            
+
             try {
+
                 return Integer.parseInt(linha);
-            } catch (NumberFormatException erro) {
-                // Ignora o erro, segue com o System.out.println mais abaixo e com o while true em seguida.
+
             }
-            System.out.print(tenteNovamente);
+
+            catch (NumberFormatException erro) {
+
+                System.out.println("Tente novamente.");
+
+            }
+
         }
+
     }
 
     public static int lerIntMaiorQueZero(String tenteNovamente) {
@@ -198,8 +214,21 @@ public class LerDados {
             System.out.print(tenteNovamente);
         }
     }
+    
+    private static final DateFormat DATA_FORMATO = new SimpleDateFormat("dd/MM/yyyy");
+    
+    public static Date lerData2() {
+        while (true) {
+            var linha = scan.nextLine();
+            try {
+                return DATA_FORMATO.parse(linha);
+            } catch (ParseException erro) {
+                System.out.println("Formato de data inválido. Tente novamente (dd/MM/yyyy):");
+            }
+        }
+    }
 
-    public static LocalDate lerData(String tenteNovamente) {
+    public static LocalDate lerData() {
         while (true) {
             var linha = scan.nextLine();
             try {
@@ -207,7 +236,7 @@ public class LerDados {
             } catch (DateTimeParseException erro) {
                 // Ignora o erro, segue com o System.out.println mais abaixo e com o while true em seguida.
             }
-            System.out.print(tenteNovamente);
+            System.out.println("Tente novamente:");
         }
     }
 
@@ -259,6 +288,6 @@ public class LerDados {
     }
 
     public static String lerTexto() {
-        return scan.nextLine();
+        return scan.nextLine();   
     }
 }
