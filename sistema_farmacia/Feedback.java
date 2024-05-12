@@ -73,7 +73,7 @@ public class Feedback {
             String sugestao = lerSugestao();
             avaliacoes.add(sugestao);
         }
-        else if(resposta.equals("n")){
+        if(resposta.equals("n")){
             System.out.println("Entendido. Agradecemos pela atenção e pela classificação, permanecemos à disposição!");
         }
     }

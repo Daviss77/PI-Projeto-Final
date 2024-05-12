@@ -1,8 +1,8 @@
 package sistema_farmacia;
 
+import lerdados.LerDados;
 
 public class InfoRemedio{
-
 public record Medicamento( 
 
     String info,
@@ -16,10 +16,9 @@ public record Medicamento(
     static Medicamento dipirona(){
             Medicamento medicamento = new Medicamento( "Genérico do Dipirona: Novalgina",
             "500mg",
-            "Modo de uso: Via oral, a cada 8 horas.",
+            "Via oral, a cada 8 horas.",
             "Amarela",
             10);
-
             medicamento.status();
             return medicamento;
         }
@@ -30,7 +29,6 @@ public record Medicamento(
                 "1.Retire a capa protetora do conta-gotas.\n2.Aspire o líquido pressionando a parte superior de borracha do conta-gotas e instile seu conteúdo nas narinas. Evite introduzir o conta-gotas nas narinas.",
                 "",
                 300);
-
                 medicamento.status();
                 return medicamento;
         }
@@ -135,13 +133,10 @@ public record Medicamento(
         return medicamento;
     }
     void status(){
-        System.out.println("A dosagem do rémedio é: " + this.dosagem());
-        System.out.println("O modo de uso: " + this.modoDeUSo());
+        System.out.println("Dosagem do rémedio é: " + this.dosagem());
+        System.out.println("Modo de uso: " + this.modoDeUSo());
         System.out.println("Cor da tarja: " + this.corTarja());
         System.out.println("Quantidade " + this.quantidade());
     }
-
-
-        
 }
 }

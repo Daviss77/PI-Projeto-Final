@@ -29,6 +29,7 @@ public static class Usuario{
         boolean entradaInvalida = false;
         boolean entradaInvalida2 = false;
         boolean validarNascimento = false;
+        boolean validarEmail = false;
 
         System.out.println("Cadastro de Usuário:");
         System.out.print("Nome completo: ");
@@ -68,9 +69,16 @@ public static class Usuario{
         System.out.print("Endereço: ");
         novoUsuario.endereco = LerDados.lerTexto();
         
-        
-        System.out.print("E-mail: ");
-        novoUsuario.email = LerDados.lerTexto();
+        while (!validarEmail) {
+            System.out.print("Email: ");
+            novoUsuario.email = LerDados.lerTexto();
+            if (validarEmail(novoUsuario.email)) {
+                validarEmail = true;
+            } else {
+                System.out.println("Email inválido. Por favor, insira um email válido.");
+            }
+        }
+
 
         while(!entradaInvalida2){
             System.out.print("Telefone: ");
@@ -83,6 +91,10 @@ public static class Usuario{
             }
         }
         return novoUsuario;
+    }
+    public static boolean validarEmail(String email) {
+        String regex = "^[a-zA-Z0-9_+&-]+(?:\\.[a-zA-Z0-9_+&-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        return email.matches(regex);
     }
 }
 }
