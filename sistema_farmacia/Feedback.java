@@ -1,7 +1,7 @@
 package sistema_farmacia;
-import java.util.ArrayList;
 
 import lerdados.LerDados;
+import java.util.ArrayList;
 
 
 public class Feedback {
@@ -144,6 +144,9 @@ public class Feedback {
         return sugestao;
     }
 }
+
+
+
 
 
 
