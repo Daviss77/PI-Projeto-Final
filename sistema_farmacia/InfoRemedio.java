@@ -1,7 +1,5 @@
 package sistema_farmacia;
 
-import lerdados.LerDados;
-
 public class InfoRemedio{
 public record Medicamento( 
 

@@ -1,6 +1,6 @@
 package sistema_farmacia;
 public class TabelaDePreco {
-    String preco;
+    static float total = 0;
     float diPreco =   2.00f;
     float omPreco =   4.00f;
     float dorPreco =  5.00f;
@@ -19,5 +19,12 @@ public class TabelaDePreco {
         System.out.println("---- TABELA DE PREÇO ----\n\nDipirona: R$ " + tabela.diPreco + "\nOmeprazol: R$ "+ tabela.omPreco + "\nDorflex: R$ "+ tabela.dorPreco + "\nBenegripe: R$ " +tabela.benPreco + "\nOzempic: R$ " + tabela.ozePreco + "\nSprepsils: R$ "+ tabela.sprePreco + "\nRinosoro: R$ " + tabela.rinoPreco + "\nCimegripe: R$ " + tabela.cimPreco + "\nFluoxetina: R$ " + tabela.fluoPreco + "\nPrednisona: R$ "+ tabela.predPreco + "\nKit Universitário: R$ " + tabela.kitPreco);
 
         return tabela;
+    }
+
+       public static TabelaDePreco statusCompra(){
+        TabelaDePreco teste = new TabelaDePreco();
+        float valorTotal = TabelaDePreco.total;
+        System.out.println("O valor total da compra foi: " + valorTotal +" Reais\n");
+        return teste;
     }
 }

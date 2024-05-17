@@ -278,12 +278,12 @@ public class LerDados {
         }
     }
 
-    public static boolean lerSimNao(String tenteNovamente) {
+    public static boolean lerSimNao() {
         while (true) {
             var linha = lerTexto().toUpperCase();
             if (linha.equals("S") || linha.equals("SIM")) return true;
             if (linha.equals("N") || linha.equals("NAO") || linha.equals("NÃO")) return false;
-            System.out.print(tenteNovamente);
+            System.out.println("tenteNovamente");
         }
     }
 

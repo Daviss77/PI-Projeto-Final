@@ -8,17 +8,18 @@ public class Validacao {
     {
         TabelaDePreco preco = new TabelaDePreco();
         Motoboy entrega = new Motoboy();
-        String respostaCliente;
+        boolean respostaCliente;
         Validacao d = new Validacao();
-        System.out.println("Confirma compra? Digite ( S ) para sim ou ( X ) para cancelar."); 
-        respostaCliente = LerDados.lerTexto().toLowerCase();
-        respostaCliente = obterRespostaSouN();
-            if(respostaCliente.equals("s"))
+        System.out.println("Confirma compra? Digite ( S ) para sim ou ( N ) para cancelar."); 
+        respostaCliente = LerDados.lerSimNao();
+        
+            if(respostaCliente == true)
             {
                 entrega.valor = preco.diPreco;
-                System.out.println("Compra adicionada ao carrinho! " + entrega.valor);
+                preco.total += entrega.valor;
+                System.out.print("Compra adicionada ao carrinho! " + entrega.valor);
             }
-            if(respostaCliente.equals("n"))
+            if(respostaCliente == false)
             {
                 System.out.println("Compra cancelada");
             }
@@ -29,17 +30,17 @@ public class Validacao {
     {
         TabelaDePreco preco = new TabelaDePreco();
         Motoboy entrega = new Motoboy();
-        String respostaCliente;
+        boolean respostaCliente;
         Validacao d = new Validacao();
-        System.out.println("Confirma compra? Digite ( S ) para sim ou ( X ) para cancelar."); 
-         respostaCliente = LerDados.lerTexto().toLowerCase();
-         respostaCliente = obterRespostaSouN();
-            if(respostaCliente.equals("s"))
+        System.out.println("\nConfirma compra? Digite ( S ) para sim ou ( N ) para cancelar."); 
+         respostaCliente = LerDados.lerSimNao();
+            if(respostaCliente == true)
             {
                 entrega.valor = preco.rinoPreco;
+                preco.total += entrega.valor;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
-            if(respostaCliente.equals("n"))
+            if(respostaCliente == false)
             {
                 System.out.println("Compra cancelada");
             }
@@ -49,17 +50,17 @@ public class Validacao {
     protected static Validacao confirmaDorflex(){
         TabelaDePreco preco = new TabelaDePreco();
         Motoboy entrega = new Motoboy();
-        String respostaCliente;
+        boolean respostaCliente;
         Validacao d = new Validacao();
-        System.out.println("Confirma compra? Digite ( S ) para sim ou ( X ) para cancelar."); 
-         respostaCliente = LerDados.lerTexto().toLowerCase();
-         respostaCliente = obterRespostaSouN();
-            if(respostaCliente.equals("s"))
+        System.out.println("Confirma compra? Digite ( S ) para sim ou ( N ) para cancelar."); 
+         respostaCliente = LerDados.lerSimNao();
+            if(respostaCliente == true)
             {
                 entrega.valor = preco.dorPreco;
+                preco.total += entrega.valor;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
-            if(respostaCliente.equals("n"))
+            if(respostaCliente == false)
             {
                 System.out.println("Compra cancelada");
             }
@@ -69,17 +70,17 @@ public class Validacao {
     protected static Validacao confirmaOmeprazol(){
         TabelaDePreco preco = new TabelaDePreco();
         Motoboy entrega = new Motoboy();
-        String respostaCliente;
+        boolean respostaCliente;
         Validacao d = new Validacao();
-        System.out.println("Confirma compra? Digite ( S ) para sim ou ( X ) para cancelar."); 
-         respostaCliente = LerDados.lerTexto().toLowerCase();
-         respostaCliente = obterRespostaSouN();
-            if(respostaCliente.equals("s"))
+        System.out.println("Confirma compra? Digite ( S ) para sim ou ( N ) para cancelar."); 
+         respostaCliente = LerDados.lerSimNao();
+            if(respostaCliente == true)
             {
                 entrega.valor = preco.omPreco;
+                preco.total += entrega.valor;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
-            if(respostaCliente.equals("n"))
+            if(respostaCliente == false)
             {
                 System.out.println("Compra cancelada");
             }
@@ -89,17 +90,17 @@ public class Validacao {
     protected static Validacao confirmaBenegripe(){
         TabelaDePreco preco = new TabelaDePreco();
         Motoboy entrega = new Motoboy();
-        String respostaCliente;
+        boolean respostaCliente;
         Validacao d = new Validacao();
-        System.out.println("Confirma compra? Digite ( S ) para sim ou ( X ) para cancelar."); 
-         respostaCliente = LerDados.lerTexto().toLowerCase();
-         respostaCliente = obterRespostaSouN();
-            if(respostaCliente.equals("s"))
+        System.out.println("Confirma compra? Digite ( S ) para sim ou ( N ) para cancelar."); 
+         respostaCliente = LerDados.lerSimNao();
+            if(respostaCliente == true)
             {
                 entrega.valor = preco.benPreco;
+                preco.total += entrega.valor;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
-            if(respostaCliente.equals("n"))
+            if(respostaCliente == false)
             {
                 System.out.println("Compra cancelada");
             }
@@ -109,17 +110,16 @@ public class Validacao {
     protected static Validacao confirmaOzempic(){
         TabelaDePreco preco = new TabelaDePreco();
         Motoboy entrega = new Motoboy();
-        String respostaCliente;
+        boolean respostaCliente;
         Validacao d = new Validacao();
-        System.out.println("Confirma compra? Digite ( S ) para sim ou ( X ) para cancelar."); 
-         respostaCliente = LerDados.lerTexto().toLowerCase();
-         respostaCliente = obterRespostaSouN();
-            if(respostaCliente.equals("s"))
+        System.out.println("Confirma compra? Digite ( S ) para sim ou ( N ) para cancelar."); 
+         respostaCliente = LerDados.lerSimNao();
+            if(respostaCliente == true)
             {
                 entrega.valor = preco.ozePreco;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
-            if(respostaCliente.equals("n"))
+            if(respostaCliente == false)
             {
                 System.out.println("Compra cancelada");
             }
@@ -129,17 +129,16 @@ public class Validacao {
     protected static Validacao confirmaStrepsils(){
         TabelaDePreco preco = new TabelaDePreco();
         Motoboy entrega = new Motoboy();
-        String respostaCliente;
+        boolean respostaCliente;
         Validacao d = new Validacao();
-        System.out.println("Confirma compra? Digite ( S ) para sim ou ( X ) para cancelar."); 
-         respostaCliente = LerDados.lerTexto().toLowerCase();
-         respostaCliente = obterRespostaSouN();
-            if(respostaCliente.equals("s"))
+        System.out.println("Confirma compra? Digite ( S ) para sim ou ( N ) para cancelar."); 
+         respostaCliente = LerDados.lerSimNao();
+            if(respostaCliente == true)
             {
                 entrega.valor = preco.sprePreco;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
-            if(respostaCliente.equals("n"))
+            if(respostaCliente == false)
             {
                 System.out.println("Compra cancelada");
             }
@@ -149,17 +148,16 @@ public class Validacao {
     protected static Validacao confirmaCimegripe(){
         TabelaDePreco preco = new TabelaDePreco();
         Motoboy entrega = new Motoboy();
-        String respostaCliente;
+        boolean respostaCliente;
         Validacao d = new Validacao();
-        System.out.println("Confirma compra? Digite ( S ) para sim ou ( X ) para cancelar."); 
-         respostaCliente = LerDados.lerTexto().toLowerCase();
-         respostaCliente = obterRespostaSouN();
-            if(respostaCliente.equals("s"))
+        System.out.println("Confirma compra? Digite ( S ) para sim ou ( N ) para cancelar."); 
+         respostaCliente = LerDados.lerSimNao();
+            if(respostaCliente == true)
             {
                 entrega.valor = preco.cimPreco;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
-            if(respostaCliente.equals("n"))
+            if(respostaCliente == false)
             {
                 System.out.println("Compra cancelada");
             }
@@ -169,17 +167,16 @@ public class Validacao {
     protected static Validacao confirmaPrednisona(){
         TabelaDePreco preco = new TabelaDePreco();
         Motoboy entrega = new Motoboy();
-        String respostaCliente;
+        boolean respostaCliente;
         Validacao d = new Validacao();
-        System.out.println("Confirma compra? Digite ( S ) para sim ou ( X ) para cancelar."); 
-         respostaCliente = LerDados.lerTexto().toLowerCase();
-         respostaCliente = obterRespostaSouN();
-            if(respostaCliente.equals("s"))
+        System.out.println("Confirma compra? Digite ( S ) para sim ou ( N ) para cancelar."); 
+         respostaCliente = LerDados.lerSimNao();
+            if(respostaCliente == true)
             {
                 entrega.valor = preco.predPreco;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
-            if(respostaCliente.equals("n"))
+            if(respostaCliente == false)
             {
                 System.out.println("Compra cancelada");
             }
@@ -189,40 +186,44 @@ public class Validacao {
     protected static Validacao confirmaFluoxetina(){
         TabelaDePreco preco = new TabelaDePreco();
         Motoboy entrega = new Motoboy();
-        String respostaCliente;
+        boolean respostaCliente;
         Validacao d = new Validacao();
-        System.out.println("Confirma compra? Digite ( S ) para sim ou ( X ) para cancelar."); 
-         respostaCliente = LerDados.lerTexto().toLowerCase();
-         respostaCliente = obterRespostaSouN();
-            if(respostaCliente.equals("s"))
+        System.out.println("Confirma compra? Digite ( S ) para sim ou ( N ) para cancelar."); 
+         respostaCliente = LerDados.lerSimNao();
+            if(respostaCliente == true)
             {
                 entrega.valor = preco.fluoPreco;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
-            if(respostaCliente.equals("n"))
+            if(respostaCliente == false)
             {
                 System.out.println("Compra cancelada");
             }
-    return d;
-    }
+            return d;
+        }
 
-    private static String obterRespostaSouN()
-    {
-        String resposta;
-            do{
-                resposta = LerDados.lerTexto().toLowerCase();
-                System.out.println("");
-                    if (!validarResposta(resposta))
-                    {
-                        System.out.println("Opção inválida. Por favor, responda com (s) para sim ou (n) para não: ");
-                    }
-            }
-            while(!validarResposta(resposta));
-    return resposta;
-    }
+        protected static Validacao receita(){
+            Validacao r  = new Validacao();
+            System.out.println("\nVocê tem receita?\nDigite ( 1 ) Caso Tenha\nDigite ( 2 ) Se não\nDigite ( 3 ) Para Retornar ao menu");
+            int valida = LerDados.lerInt();
+                if( valida == 1)
+                {
+                    Validacao.confirmaOmeprazol();
+                }
+                else if(valida == 2)
+                {
+                    System.out.println("Infelizmente a compra do remédio não pode ser realizada sem receita.");
+                }
+                else if( valida == 3)
+                {
+                    TabelaDePreco.dadosDePreco();
+                }
+                else
+                {
+                    System.out.println("Opção Inválida");
+                }
+                return r;
 
-    private static boolean validarResposta(String resposta)
-    {
-        return resposta.equals("s") || resposta.equals("n");
-    }
+        }
+
 }

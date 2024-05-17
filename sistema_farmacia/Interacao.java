@@ -29,51 +29,17 @@ public class Interacao{
                     //prescrição médica
                 case "omeprazol":
                         Medicamento.omeprazol();
-                        System.out.println("\nVoce tem a receita?");
-                        System.out.println("Digite 1 para sim");
-                        System.out.println("Digite 2 para não");
-                        System.out.println("Digite 3 para voltar ao menu");
-                        int escolhaOme = LerDados.lerInt();
-                    switch(escolhaOme)
-                        {
-                        case 1:
-                            Validacao.confirmaOmeprazol();
-                        break;
-                        case 2:
-                            System.out.println("Infelizmente a compra de Omeprazol não pode ser realizada sem receita.");
-                        break;
-                        case 3:
-                        continue;
-                        default:
-                            System.out.println("Opção inválida");
+                        Validacao.receita();
                 break;
-                        }
                 case "benegripe":
                         Medicamento.benegripe();
                         Validacao.confirmaBenegripe();
                 break;
                     //Prescrição médica
                 case "ozempic":
-                        System.out.println("Voce tem a receita?");
-                        System.out.println("Digite 1 para sim");
-                        System.out.println("Digite 2 para não");
-                        System.out.println("Digite 3 para voltar ao menu");
-                        int escolhaOzmp = LerDados.lerInt();
-                    switch(escolhaOzmp)
-                    {
-                        case 1:
-                            Validacao.confirmaOzempic();
-                        break;
-                        case 2:
-                            System.out.println("Infelizmente a compra de Ozempic não pode ser realizada sem receita.");
-                        break;
-                        case 3:
-                        continue;
-                        default:
-                            System.out.println("Opção inválida");
+                        Medicamento.ozempic();
+                        Validacao.receita();
                 break;
-                    }
-                
                 case "strepsils":
                         Medicamento.strepsils();
                         Validacao.confirmaStrepsils();
@@ -89,72 +55,38 @@ public class Interacao{
                     //Prescrição médica
                 case "prednisona":
                         Medicamento.prednisona();
-                        System.out.println("\nVoce tem a receita?");
-                        System.out.println("Digite 1 para sim");
-                        System.out.println("Digite 2 para não");
-                        System.out.println("Digite 3 para voltar ao menu");
-                        int escolhaPred = LerDados.lerInt();
-                    switch(escolhaPred)
-                    {
-                        case 1:
-                        Validacao.confirmaPrednisona();
-                        break;
-                        case 2:
-                        System.out.println("Infelizmente a compra de Prednisona não pode ser realizada sem receita");
-                        break;
-                        case 3:
-                        continue;
-                        default:
-                        System.out.println("Opção inválida");
+                        Validacao.receita();
                 break;
-                    }
                     //Prescrição médica
                 case "fluoxetina":
                         Medicamento.fluoxetina();
-                        System.out.println("\nVoce tem a receita?");
-                        System.out.println("Digite 1 para sim");
-                        System.out.println("Digite 2 para não");
-                        System.out.println("Digite 3 para voltar ao menu");
-                        int escolhaFlux = LerDados.lerInt();
-                    switch(escolhaFlux)
-                    {
-                        case 1:
-                            Validacao.confirmaFluoxetina();
-                        break;
-                        case 2:
-                            System.out.println("Infelizmente a compra de Fluxetina não pode ser realizada sem receita.");
-                        break;
-                        case 3:
-                        continue;
-                        default:
-                            System.out.println("Opção inválida");
+                        Validacao.receita();
                 break;
-                    }
                 case "kit universitario":
                         Medicamento.kitUniversitario();
                         entrega.valor += preco.kitPreco;
-                        System.out.println("Compra do kit universitário adicionada ao carrinho: " + entrega.  valor);
+                        System.out.println("Compra do kit universitário adicionada ao carrinho: " + entrega.valor);
                 break;
                 case "finalizar":
                         System.out.println("Sistema de compras finalizado com sucesso");
+                        TabelaDePreco.statusCompra();
                 break;
                 case "voltar":
                         TabelaDePreco.dadosDePreco();
-                break;
+                    break;
                 default:
                         System.out.println(escolha + " Nome não encontrado fora da lista");
                 break;
                 }
             }
         while(!escolha.equals("finalizar"));
-            
-            String motoBoy;
 
-            System.out.println("O pedido vai ser via MotoBoy? digite ( S ) para entrar no sistema ou ( X ) para finalização da compra");
+            boolean motoBoy;
+
+            System.out.println("O pedido vai ser via MotoBoy? digite ( S ) para entrar no sistema ou ( N ) para finalização da compra");
         do{
-            motoBoy = LerDados.lerTexto().toLowerCase();
-            motoBoy = obterRespostaSouN();
-            if(motoBoy.equals("s"))
+            motoBoy = LerDados.lerSimNao();
+            if(motoBoy == true)
                 {
                     System.out.println("Você é de qual região de São Paulo?\n--- DIGITE A REGIÃO CORRESPONDENTE ---\nCentro\nSul\nLeste\nOeste\nNorte\n");
                     String regiao = LerDados.lerTexto().toLowerCase();
@@ -180,32 +112,13 @@ public class Interacao{
                         break;
                     }
                 }
+                if(motoBoy == false){
+                    System.out.println("\n---( Sistema de compras fechado )---");
+                    motoBoy = true;
+                }
         }
-                while (motoBoy.equals("s"));
+                while (!motoBoy == true);
 
                 return preco;
-            }
-
-
-
-
-            private static String obterRespostaSouN()
-            {
-                String resposta;
-                    do{
-                        resposta = LerDados.lerTexto().toLowerCase();
-                        System.out.println("");
-                            if (!validarResposta(resposta))
-                            {
-                                System.out.println("Opção inválida. Por favor, responda com (s) para sim ou (n) para não: ");
-                            }
-                    }
-                    while(!validarResposta(resposta));
-            return resposta;
-            }
-        
-            private static boolean validarResposta(String resposta)
-            {
-                return resposta.equals("s") || resposta.equals("n");
             }
         }

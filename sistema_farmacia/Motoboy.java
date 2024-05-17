@@ -1,51 +1,49 @@
 package sistema_farmacia;
 
 public class Motoboy {
-    String entro;
     float valor;
     int frete;
     int tempo;
     float contaTotal;
 
-    public Motoboy rotasSul(){
+    public void rotasSul(){
         Motoboy entrega = new Motoboy();
-        entrega.valor = valor;
+        entrega.valor = TabelaDePreco.total;
         frete = 20;
         tempo = 15;
-        contaTotal = valor + frete;
+        contaTotal = entrega.valor + frete;
         statusEntrega();
-        return entrega;
     }
     public void rotaNorte(){
         Motoboy entrega = new Motoboy();
-        entrega.valor = valor;
+        entrega.valor = TabelaDePreco.total;
         frete = 30;
         tempo = 40;
-        contaTotal = valor + frete;
+        contaTotal = entrega.valor + frete;
         statusEntrega();
     }
     public void rotaLeste(){
         Motoboy entrega = new Motoboy();
-        entrega.valor = valor;
+        entrega.valor = TabelaDePreco.total;
         frete = 25;
         tempo = 30;
-        contaTotal = valor + frete;
+        contaTotal = entrega.valor + frete;
         statusEntrega();
     }
     public void rotaOeste(){
         Motoboy entrega = new Motoboy();
-        entrega.valor = valor;
+        entrega.valor = TabelaDePreco.total;
         frete = 35;
         tempo = 60;
-        contaTotal = valor + frete;
+        contaTotal = entrega.valor + frete;
         statusEntrega();
     }
     public void rotaCentro(){
         Motoboy entrega = new Motoboy();
-        entrega.valor = valor;
+        entrega.valor = TabelaDePreco.total;
         frete = 35;
         tempo = 25;
-        contaTotal = valor + frete;
+        contaTotal = entrega.valor + frete;
         statusEntrega();
     }
     public void statusEntrega(){
