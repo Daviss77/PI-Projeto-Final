@@ -16,7 +16,7 @@ public class Validacao {
             if(respostaCliente == true)
             {
                 entrega.valor = preco.diPreco;
-                preco.total += entrega.valor;
+                TabelaDePreco.total += entrega.valor;
                 System.out.print("Compra adicionada ao carrinho! " + entrega.valor);
             }
             if(respostaCliente == false)
@@ -37,7 +37,7 @@ public class Validacao {
             if(respostaCliente == true)
             {
                 entrega.valor = preco.rinoPreco;
-                preco.total += entrega.valor;
+                TabelaDePreco.total += entrega.valor;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
             if(respostaCliente == false)
@@ -57,7 +57,7 @@ public class Validacao {
             if(respostaCliente == true)
             {
                 entrega.valor = preco.dorPreco;
-                preco.total += entrega.valor;
+                TabelaDePreco.total += entrega.valor;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
             if(respostaCliente == false)
@@ -77,7 +77,7 @@ public class Validacao {
             if(respostaCliente == true)
             {
                 entrega.valor = preco.omPreco;
-                preco.total += entrega.valor;
+                TabelaDePreco.total += entrega.valor;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
             if(respostaCliente == false)
@@ -97,7 +97,7 @@ public class Validacao {
             if(respostaCliente == true)
             {
                 entrega.valor = preco.benPreco;
-                preco.total += entrega.valor;
+                TabelaDePreco.total += entrega.valor;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
             if(respostaCliente == false)
@@ -117,6 +117,7 @@ public class Validacao {
             if(respostaCliente == true)
             {
                 entrega.valor = preco.ozePreco;
+                TabelaDePreco.total += entrega.valor;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
             if(respostaCliente == false)
@@ -136,6 +137,7 @@ public class Validacao {
             if(respostaCliente == true)
             {
                 entrega.valor = preco.sprePreco;
+                TabelaDePreco.total += entrega.valor;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
             if(respostaCliente == false)
@@ -155,6 +157,7 @@ public class Validacao {
             if(respostaCliente == true)
             {
                 entrega.valor = preco.cimPreco;
+                TabelaDePreco.total += entrega.valor;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
             if(respostaCliente == false)
@@ -174,6 +177,7 @@ public class Validacao {
             if(respostaCliente == true)
             {
                 entrega.valor = preco.predPreco;
+                TabelaDePreco.total += entrega.valor;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
             if(respostaCliente == false)
@@ -193,6 +197,7 @@ public class Validacao {
             if(respostaCliente == true)
             {
                 entrega.valor = preco.fluoPreco;
+                TabelaDePreco.total += entrega.valor;
                 System.out.println("Compra adicionada ao carrinho! " + entrega.valor);            
             }
             if(respostaCliente == false)

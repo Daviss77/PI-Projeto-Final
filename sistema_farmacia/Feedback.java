@@ -50,31 +50,15 @@ public class Feedback {
         return classificacao.equals("muito ruim") || classificacao.equals("ruim") || classificacao.equals("regular") || classificacao.equals("bom") || classificacao.equals("muito bom");
     }
 
-    private static String obterResposta(){
-        String resposta;
-        do {
-            resposta = LerDados.lerTexto().toLowerCase();
-            if (!validarResposta(resposta)) {
-                System.out.println("Opção inválida. Por favor, responda com (s) para sim ou (n) para não: ");
-            }
-        } while (!validarResposta(resposta));
-        return resposta;
-    }
-
-    private static boolean validarResposta(String resposta){
-        return resposta.equals("s") || resposta.equals("n");
-    }
-
     private static void sugerirMelhoriaMr(){
         System.out.println("Você classificou nosso atendimento como: Muito Ruim ou Ruim :(\n");
         System.out.println("Gostaria de contribuir com alguma sugestão de melhora? (S/N)");
-        String resposta = LerDados.lerTexto().toLowerCase();
-        resposta = obterResposta();
-        if (resposta.equals("s")) {
+        boolean resposta = LerDados.lerSimNao();
+        if (resposta == true) {
             String sugestao = lerSugestao();
             avaliacoes.add(sugestao);
         }
-        if(resposta.equals("n")){
+        if(resposta == false){
             System.out.println("Entendido. Agradecemos pela atenção e pela classificação, permanecemos à disposição!");
         }
     }
@@ -82,13 +66,12 @@ public class Feedback {
     private static void sugerirMelhoriaR(){
         System.out.println("\nVocê classificou nosso atendimento como: Muito Ruim ou Ruim :(\n");
         System.out.println("Gostaria de contribuir com alguma sugestão de melhora? (S/N)");
-        String resposta = LerDados.lerTexto().toLowerCase();
-        resposta = obterResposta();
-        if (resposta.equals("s")) {
+        boolean resposta = LerDados.lerSimNao();
+        if (resposta == true) {
             String sugestao = lerSugestao();
             avaliacoes.add(sugestao);
         }
-        else if(resposta.equals("n")){
+        else if(resposta == false){
             System.out.println("Entendido. Agradecemos pela atenção e pela classificação, permanecemos à disposição!");
         }
     }
@@ -96,13 +79,12 @@ public class Feedback {
     private static void sugerirMelhoriaRegular(){
         System.out.println("\nVocê classificou nosso atendimento como: Regular :/\n");
         System.out.println("Gostaria de indicar os pontos que devemos melhorar? (S/N)");
-        String resposta = LerDados.lerTexto().toLowerCase();
-        resposta = obterResposta();
-        if (resposta.equals("s")) {
+        boolean resposta = LerDados.lerSimNao();
+        if (resposta == true) {
             String sugestao = lerSugestao();
             avaliacoes.add(sugestao);
         }
-        else if(resposta.equals("n")){
+        else if(resposta == false){
             System.out.println("Entendido. Agradecemos pela atenção e pela classificação, permanecemos à disposição!");
         }
     }
@@ -110,13 +92,13 @@ public class Feedback {
     private static void sugerirMelhoriaB(){
         System.out.println("\nVocê classificou nosso atendimento como: Bom ou Muito Bom :)\n");
         System.out.println("Teria alguma recomendação para melhorarmos o nosso atendimento? (S/N)");
-        String resposta = LerDados.lerTexto().toLowerCase();
-        resposta = obterResposta();
-        if (resposta.equals("s")) {
+        boolean resposta = LerDados.lerSimNao();
+        
+        if (resposta == true) {
             String sugestao = lerSugestao();
             avaliacoes.add(sugestao);
         }
-        else if(resposta.equals("n")){
+        else if(resposta == false){
             System.out.println("Entendido. Agradecemos pela atenção e pela classificação, permanecemos à disposição!");
         }
     }
@@ -124,13 +106,13 @@ public class Feedback {
     private static void sugerirMelhoriaMb(){
         System.out.println("\nVocê classificou nosso atendimento como: Bom ou Muito Bom :)\n");
         System.out.println("Teria alguma recomendação para melhorarmos o nosso atendimento? (S/N)");
-        String resposta = LerDados.lerTexto().toLowerCase();
-        resposta = obterResposta();
-        if (resposta.equals("s")) {
+        boolean resposta = LerDados.lerSimNao();
+
+        if (resposta == true) {
             String sugestao = lerSugestao();
             avaliacoes.add(sugestao);
         }
-        else if(resposta.equals("n")){
+        else if(resposta == false){
             System.out.println("Entendido. Agradecemos pela atenção e pela classificação, permanecemos à disposição!");
         }
     }
