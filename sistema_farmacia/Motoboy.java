@@ -12,6 +12,8 @@ public class Motoboy {
         frete = 20;
         tempo = 15;
         contaTotal = entrega.valor + frete;
+        String conversaoMB = Float.toString(contaTotal);
+        Salvar.cadastroCliente.add(conversaoMB);
         statusEntrega();
     }
     public void rotaNorte(){
@@ -20,6 +22,8 @@ public class Motoboy {
         frete = 30;
         tempo = 40;
         contaTotal = entrega.valor + frete;
+        String conversaoMB = Float.toString(contaTotal);
+        Salvar.cadastroCliente.add(conversaoMB);
         statusEntrega();
     }
     public void rotaLeste(){
@@ -28,6 +32,8 @@ public class Motoboy {
         frete = 25;
         tempo = 30;
         contaTotal = entrega.valor + frete;
+        String conversaoMB = Float.toString(contaTotal);
+        Salvar.cadastroCliente.add(conversaoMB);
         statusEntrega();
     }
     public void rotaOeste(){
@@ -36,6 +42,8 @@ public class Motoboy {
         frete = 35;
         tempo = 60;
         contaTotal = entrega.valor + frete;
+        String conversaoMB = Float.toString(contaTotal);
+        Salvar.cadastroCliente.add(conversaoMB);
         statusEntrega();
     }
     public void rotaCentro(){
@@ -44,6 +52,8 @@ public class Motoboy {
         frete = 35;
         tempo = 25;
         contaTotal = entrega.valor + frete;
+        String conversaoMB = Float.toString(contaTotal);
+        Salvar.cadastroCliente.add(conversaoMB);
         statusEntrega();
     }
     public void statusEntrega(){

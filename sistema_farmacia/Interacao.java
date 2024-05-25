@@ -16,60 +16,72 @@ public class Interacao{
             System.out.println("Escreva os remédios que deseja:\n");
             escolha = LerDados.lerTexto();
             escolha = escolha.toLowerCase();
-            
             switch (escolha) {
                 case "dipirona":
-                    Medicamento.dipirona();
-                    Validacao.confirmaDipirona();
+                Medicamento.dipirona();
+                Validacao.confirmaDipirona();
+                Salvar.cadastroCliente.add("Dipirona");
                 break;
                 case "dorflex":
                     Medicamento.dorflex();
                     Validacao.confirmaDorflex();
+                    Salvar.cadastroCliente.add("Dorflex");
                 break;
                     //prescrição médica
                 case "omeprazol":
                         Medicamento.omeprazol();
                         Validacao.receita();
+                        Salvar.cadastroCliente.add("Omeprezol");
                 break;
                 case "benegripe":
                         Medicamento.benegripe();
                         Validacao.confirmaBenegripe();
+                        Salvar.cadastroCliente.add("Benegripe");
                 break;
                     //Prescrição médica
                 case "ozempic":
                         Medicamento.ozempic();
                         Validacao.receita();
+                        Salvar.cadastroCliente.add("Ozempic");
                 break;
                 case "strepsils":
                         Medicamento.strepsils();
                         Validacao.confirmaStrepsils();
+                        Salvar.cadastroCliente.add("Strepsils");
                 break;
                 case "rinosoro":
                         Medicamento.rinosoro();
                         Validacao.confirmaRinosoro();
+                        Salvar.cadastroCliente.add("Rinosoro");
                 break;
                 case "cimegripe":
                         Medicamento.cimegripe();
                         Validacao.confirmaCimegripe();
+                        Salvar.cadastroCliente.add("Cimegripe");
                 break;
                     //Prescrição médica
                 case "prednisona":
                         Medicamento.prednisona();
                         Validacao.receita();
+                        Salvar.cadastroCliente.add("Prednisona");
                 break;
                     //Prescrição médica
                 case "fluoxetina":
                         Medicamento.fluoxetina();
                         Validacao.receita();
+                        Salvar.cadastroCliente.add("Fluoxetina");
                 break;
                 case "kit universitario":
                         Medicamento.kitUniversitario();
                         entrega.valor += preco.kitPreco;
+                        Salvar.cadastroCliente.add("Kit Universitario");
                         System.out.println("Compra do kit universitário adicionada ao carrinho: " + entrega.valor);
                 break;
                 case "finalizar":
                         System.out.println("Sistema de compras finalizado com sucesso");
                         TabelaDePreco.statusCompra();
+                        String conversao = Float.toString(TabelaDePreco.total);
+                        Salvar.cadastroCliente.add(conversao);
                 break;
                 case "voltar":
                         TabelaDePreco.dadosDePreco();
@@ -93,19 +105,26 @@ public class Interacao{
                     switch (regiao)
                     {
                         case "centro" :
-                            entrega.rotaCentro();
+                        Salvar.cadastroCliente.add(regiao);
+                        entrega.rotaCentro();
                         break;
                         case "sul":
-                            entrega.rotasSul();
+                        Salvar.cadastroCliente.add(regiao);
+                        entrega.rotasSul();
                         break;
                         case "leste":
-                            entrega.rotaLeste();
+                        Salvar.cadastroCliente.add(regiao);
+                        entrega.rotaLeste();
                         break;
                         case "oeste":
-                            entrega.rotaOeste();
+                        Salvar.cadastroCliente.add(regiao);
+                        entrega.rotaOeste();
+
                         break;
                         case "norte":
-                            entrega.rotaNorte();
+                        Salvar.cadastroCliente.add(regiao);
+                        entrega.rotaNorte();
+
                         break;
                         default: 
                                 System.out.println( regiao + " Valor não encontrado! Digite novamente.");
@@ -118,7 +137,6 @@ public class Interacao{
                 }
         }
                 while (!motoBoy == true);
-
                 return preco;
             }
         }

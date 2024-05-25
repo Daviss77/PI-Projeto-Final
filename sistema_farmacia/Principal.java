@@ -1,30 +1,28 @@
 package sistema_farmacia;
 import java.time.LocalDate;
-// Validação data; Valição email.
-
 import lerdados.LerDados;
 
 public class Principal{
     public static void main(String[] args){
-    Usuario.cadastrarUsuario();
-    System.out.println("\nUSUÁRIO CADASTRADO COM SUCESSO!\n");
-    TabelaDePreco.dadosDePreco();
-    Interacao.escolha();
-    Feedback.feedbacks();
-    
-}
-
-
-public static class Usuario{
-    String nomeCompleto;
-    LocalDate dataNascimento;
-    String endereco;
-    String cpf;
-    String email;
-    String telefone;
+        Usuario.cadastrarUsuario();
+        System.out.println("\nUSUÁRIO CADASTRADO COM SUCESSO!\n");
+        TabelaDePreco.dadosDePreco();
+        Interacao.escolha();
+        Feedback.feedbacks();
+        Salvar.salvandoArray(Salvar.cadastroCliente, Salvar.cliente);
+    }
     
     
-    private static Usuario cadastrarUsuario() {
+    public static class Usuario{
+        String nomeCompleto;
+        LocalDate dataNascimento;
+        String endereco;
+        String cpf;
+        String email;
+        String telefone;
+        
+        
+        private static Usuario cadastrarUsuario() {
         Usuario novoUsuario = new Usuario();
         boolean entradaInvalida = false;
         boolean entradaInvalida2 = false;
@@ -51,8 +49,10 @@ public static class Usuario{
     
                 if(novoUsuario.cpf.length() == 11){
                 try{
+                    
                     Long.parseLong(novoUsuario.cpf);
                     entradaInvalida = true;
+                    Salvar.cadastroCliente.add(novoUsuario.cpf);
                 }catch (NumberFormatException e){
                     System.out.println("ERRO! digite números inteiros");
                 }
