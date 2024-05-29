@@ -234,11 +234,15 @@ public class Validacao {
         boolean encontrado = false;
         for(String ver : Salvar.cadastroCliente)
         {
+            System.out.print("Digite o nome do remédio de qual predente tirar: ");
+            Contas.remover = LerDados.lerTexto().toLowerCase();
             if(ver.equals(Contas.remover))
             {
+                Contas.subtrair();
                 encontrado = true;
                 break;
             }
+            break;
         }
         if(encontrado == false){
             System.out.println("\nERRO! " + Contas.remover + " não encontrado no seu carrinho de compras");

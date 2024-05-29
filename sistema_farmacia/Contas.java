@@ -7,9 +7,6 @@ public class Contas {
     static void subtrair(){
         Motoboy entrega = new Motoboy();
         TabelaDePreco preco = new TabelaDePreco();
-        System.out.print("Digite o nome do remédio de qual predente tirar: ");
-        Contas.remover = LerDados.lerTexto().toLowerCase();
-        Validacao.verificarArray();
         switch (Contas.remover){
             case "dipirona":
                 TabelaDePreco.total -= preco.diPreco;

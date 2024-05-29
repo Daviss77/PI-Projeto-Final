@@ -31,22 +31,30 @@ public static void salvandoArray(ArrayList <String> cadastroCliente, String clie
 static void remover(){
     System.out.println("Você deseja remover algum remédio do carrinho de compras?\nDigite ( S ) --Para confirmar\nDigite ( N ) --Para cancelar-- ");
     boolean resposta = LerDados.lerSimNao();
-    boolean resposta2 = false;
     do{
         if(resposta == true)
         {
-            Contas.subtrair();
-            
+            Validacao.verificarArray();
+
             System.out.println("\nDeseja tirar mais?\nDigite ( S ) --Para confirmar--\nDigite ( N ) --Para cancelar-- " );
-                resposta2 = LerDados.lerSimNao();
-                if(resposta2 == true)
+            resposta = LerDados.lerSimNao();
+            if(resposta == true){
+                Validacao.verificarArray();
+        }
+        }
+           
+    }while(!resposta == false);
+    
+    /*do{
+        System.out.println("\nDeseja tirar mais?\nDigite ( S ) --Para confirmar--\nDigite ( N ) --Para cancelar-- " );
+        resposta2 = LerDados.lerSimNao();
+            if(resposta2 == true)
                 {
                     Contas.subtrair();
-                } 
                     
-        }   
-        
-    }while(!resposta == false || !resposta2 == false);
+                } 
+                
+    }while (!resposta2 == false);*/
  
 }
 
