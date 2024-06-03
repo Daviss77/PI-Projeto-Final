@@ -1,8 +1,6 @@
 package sistema_farmacia;
 import lerdados.LerDados;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class Salvar {
@@ -29,33 +27,39 @@ public static void salvandoArray(ArrayList <String> cadastroCliente, String clie
 }
 
 static void remover(){
-    System.out.println("Você deseja remover algum remédio do carrinho de compras?\nDigite ( S ) --Para confirmar\nDigite ( N ) --Para cancelar-- ");
-    boolean resposta = LerDados.lerSimNao();
+    boolean resposta;
     do{
+        System.out.println("Você deseja remover algum remédio do carrinho de compras?\nDigite ( S ) --Para confirmar\nDigite ( N ) --Para cancelar-- ");
+         resposta = LerDados.lerSimNao();
         if(resposta == true)
         {
+            System.out.println("Digite o nome do remédio de qual predente tirar: ");
+            Contas.remover = LerDados.lerTexto().toLowerCase();
             Validacao.verificarArray();
 
             System.out.println("\nDeseja tirar mais?\nDigite ( S ) --Para confirmar--\nDigite ( N ) --Para cancelar-- " );
             resposta = LerDados.lerSimNao();
+
             if(resposta == true){
+                System.out.println("Digite o nome do remédio de qual predente tirar: ");
+                Contas.remover = LerDados.lerTexto().toLowerCase();
                 Validacao.verificarArray();
         }
         }
            
     }while(!resposta == false);
-    
-    /*do{
-        System.out.println("\nDeseja tirar mais?\nDigite ( S ) --Para confirmar--\nDigite ( N ) --Para cancelar-- " );
-        resposta2 = LerDados.lerSimNao();
-            if(resposta2 == true)
-                {
-                    Contas.subtrair();
-                    
-                } 
-                
-    }while (!resposta2 == false);*/
- 
 }
+        static void limparArquivo(){
+            System.out.println("Deseja limpar o arquivo?");
+            boolean resposta = LerDados.lerSimNao();
+            if(resposta == true){
+             try {
+                   PrintWriter writer = new PrintWriter("C:\\\\Users\\\\daviz\\\\OneDrive\\\\Documentos\\\\codigos\\\\pi\\\\PI-Projeto-Final\\\\sistema_farmacia\\\\CadastroCliente.txt");
+                   writer.close();
+                   System.out.println("Arquivo limpo com sucesso.");
+            } catch (FileNotFoundException e)
+            {System.err.println("Erro ao limpar o arquivo: " + e.getMessage());          }
+      }
+    }
 
 }

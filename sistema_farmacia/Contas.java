@@ -3,7 +3,7 @@ package sistema_farmacia;
 import lerdados.LerDados;
 
 public class Contas {
-   static String remover = "";
+   static String remover;
     static void subtrair(){
         Motoboy entrega = new Motoboy();
         TabelaDePreco preco = new TabelaDePreco();
@@ -22,9 +22,9 @@ public class Contas {
                 TabelaDePreco.total -= preco.dorPreco;
                 entrega.valor = TabelaDePreco.total;
                 Salvar.cadastroCliente.remove(Contas.remover);
+            
             break;
             case "benegripe":
-
                 TabelaDePreco.total -= preco.benPreco;
                 entrega.valor = TabelaDePreco.total;
                 Salvar.cadastroCliente.remove(Contas.remover);

@@ -230,22 +230,21 @@ public class Validacao {
             return r;
             
         }
-    static void verificarArray(){
+        
+        static void verificarArray(){
         boolean encontrado = false;
         for(String ver : Salvar.cadastroCliente)
         {
-            System.out.print("Digite o nome do remédio de qual predente tirar: ");
-            Contas.remover = LerDados.lerTexto().toLowerCase();
             if(ver.equals(Contas.remover))
             {
                 Contas.subtrair();
                 encontrado = true;
+                System.out.println( "\n" + Contas.remover + "Removido do seu carrinho de compras :)");
                 break;
             }
-            break;
         }
         if(encontrado == false){
-            System.out.println("\nERRO! " + Contas.remover + " não encontrado no seu carrinho de compras");
+            System.out.println("\nERRO! " + Contas.remover + "não encontrado no seu carrinho de compras\n");
         }
     }
     

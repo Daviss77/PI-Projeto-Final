@@ -37,7 +37,6 @@ public record Medicamento(
                 "1 a 2 comprimidos, 3 a 4x ao dia.",
                 "Não inclui tarja (isento de prescrição médica)",
                 10);
-
                 medicamento.status();
                 return medicamento;
         }

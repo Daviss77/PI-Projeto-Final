@@ -10,6 +10,7 @@ public class Principal{
         Interacao.escolha();
         Feedback.feedbacks();
         Salvar.salvandoArray(Salvar.cadastroCliente, Salvar.cliente);
+        Salvar.limparArquivo();
     }
     
     
@@ -21,14 +22,14 @@ public class Principal{
         String email;
         String telefone;
         
-        
+
         private static Usuario cadastrarUsuario() {
         Usuario novoUsuario = new Usuario();
         boolean entradaInvalida = false;
         boolean entradaInvalida2 = false;
         boolean validarNascimento = false;
         boolean validarEmail = false;
-
+        
         System.out.println("Cadastro de Usuário:");
         System.out.print("Nome completo: ");
         novoUsuario.nomeCompleto = LerDados.lerTexto();
@@ -52,7 +53,6 @@ public class Principal{
                     
                     Long.parseLong(novoUsuario.cpf);
                     entradaInvalida = true;
-                    Salvar.cadastroCliente.add(novoUsuario.cpf);
                 }catch (NumberFormatException e){
                     System.out.println("ERRO! digite números inteiros");
                 }
@@ -62,14 +62,13 @@ public class Principal{
                 System.out.println("escreva até 11 digitos");
                 entradaInvalida = false;
                 }
-    
             }
         System.out.println("Correto! Pode continuar");
-        
+
         System.out.print("Endereço: ");
         novoUsuario.endereco = LerDados.lerTexto();
-        
-        while (!validarEmail) {
+
+        while (!validarEmail){
             System.out.print("Email: ");
             novoUsuario.email = LerDados.lerTexto();
             if (validarEmail(novoUsuario.email)) {
