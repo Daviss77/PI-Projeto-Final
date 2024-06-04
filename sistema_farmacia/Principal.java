@@ -7,10 +7,10 @@ public class Principal{
         Usuario.cadastrarUsuario();
         System.out.println("\nUSUÁRIO CADASTRADO COM SUCESSO!\n");
         TabelaDePreco.dadosDePreco();
-        Interacao.escolha();
+        Interacao.escolha();                                                                                                        
         Feedback.feedbacks();
         Salvar.salvandoArray(Salvar.cadastroCliente, Salvar.cliente);
-        Salvar.limparArquivo();
+        Adm.usuarioAdm();
     }
     
     

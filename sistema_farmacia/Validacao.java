@@ -207,13 +207,88 @@ public class Validacao {
             return d;
         }
         
-        protected static Validacao receita(){
+        protected static Validacao receitaFluoxetina(){
+            Validacao r  = new Validacao();
+            System.out.println("\nVocê tem receita?\nDigite ( 1 ) Caso Tenha\nDigite ( 2 ) Se não\nDigite ( 3 ) Para Retornar ao menu");
+            int valida = LerDados.lerInt();
+            if( valida == 1)
+            {
+                Validacao.confirmaFluoxetina();
+                Salvar.cadastroCliente.add("fluoxetina");
+            }
+            else if(valida == 2)
+            {
+                System.out.println("Infelizmente a compra do remédio não pode ser realizada sem receita.");
+            }
+            else if( valida == 3)
+            {
+                TabelaDePreco.dadosDePreco();
+            }
+            else
+            {
+                System.out.println("Opção Inválida");
+            }
+            return r;
+            
+        }
+
+        protected static Validacao receitaOmeprazol(){
             Validacao r  = new Validacao();
             System.out.println("\nVocê tem receita?\nDigite ( 1 ) Caso Tenha\nDigite ( 2 ) Se não\nDigite ( 3 ) Para Retornar ao menu");
             int valida = LerDados.lerInt();
             if( valida == 1)
             {
                 Validacao.confirmaOmeprazol();
+                Salvar.cadastroCliente.add("omeprazol");
+            }
+            else if(valida == 2)
+            {
+                System.out.println("Infelizmente a compra do remédio não pode ser realizada sem receita.");
+            }
+            else if( valida == 3)
+            {
+                TabelaDePreco.dadosDePreco();
+            }
+            else
+            {
+                System.out.println("Opção Inválida");
+            }
+            return r;
+            
+        }
+
+        protected static Validacao receitaOzempic(){
+            Validacao r  = new Validacao();
+            System.out.println("\nVocê tem receita?\nDigite ( 1 ) Caso Tenha\nDigite ( 2 ) Se não\nDigite ( 3 ) Para Retornar ao menu");
+            int valida = LerDados.lerInt();
+            if( valida == 1)
+            {
+                Validacao.confirmaOzempic();
+                Salvar.cadastroCliente.add("ozempic");
+            }
+            else if(valida == 2)
+            {
+                System.out.println("Infelizmente a compra do remédio não pode ser realizada sem receita.");
+            }
+            else if( valida == 3)
+            {
+                TabelaDePreco.dadosDePreco();
+            }
+            else
+            {
+                System.out.println("Opção Inválida");
+            }
+            return r;
+            
+        }
+        protected static Validacao receitaPrednisona(){
+            Validacao r  = new Validacao();
+            System.out.println("\nVocê tem receita?\nDigite ( 1 ) Caso Tenha\nDigite ( 2 ) Se não\nDigite ( 3 ) Para Retornar ao menu");
+            int valida = LerDados.lerInt();
+            if( valida == 1)
+            {
+                Validacao.confirmaPrednisona();
+                Salvar.cadastroCliente.add("prednisona");
             }
             else if(valida == 2)
             {
@@ -239,12 +314,12 @@ public class Validacao {
             {
                 Contas.subtrair();
                 encontrado = true;
-                System.out.println( "\n" + Contas.remover + "Removido do seu carrinho de compras :)");
+                System.out.println( "\n" + Contas.remover + " Removido do seu carrinho de compras :)");
                 break;
             }
         }
-        if(encontrado == false){
-            System.out.println("\nERRO! " + Contas.remover + "não encontrado no seu carrinho de compras\n");
+        if(encontrado == false){ 
+            System.out.println("\nERRO! " + Contas.remover + " não encontrado no seu carrinho de compras\n");
         }
     }
     

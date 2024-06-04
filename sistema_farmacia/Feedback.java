@@ -10,7 +10,7 @@ public class Feedback {
 
     public static void feedbacks() {
     
-        System.out.println("Agradecemos por efetuar a sua compra! \n");
+        System.out.println("   AGRADECEMOS POR EFETUAR SUA COMPRA :) ! \n");
 
         System.out.println("Para que a gente possa melhorar o nosso atendimento, gostaríamos muito de saber sobre a sua experiência com nosso atendimento. Classifique abaixo o seu nível de satisfação. \n\n=)--- NÍVEIS DE SATISFAÇÃO ---(=\n\n Muito ruim\n Ruim\n Regular\n Bom\n Muito bom\n");
 

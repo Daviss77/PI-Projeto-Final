@@ -14,7 +14,7 @@ public class Interacao{
             System.out.println("\nEscreva ( VOLTAR ) para ter acesso a tabela de preços");
             System.out.println("Escreva ( FINALIZAR ) para fechar o sistema de compras");
             System.out.println("Escreva ( CARRINHO ) para mostrar os remédios escolhidos");
-            System.out.println("Escreva os remédios que deseja:\n");
+            System.out.println("Escreva os remédios que deseja:");
             escolha = LerDados.lerTexto();
             escolha = escolha.toLowerCase();
             switch (escolha) {
@@ -31,8 +31,7 @@ public class Interacao{
                     //prescrição médica
                 case "omeprazol":
                         Medicamento.omeprazol();
-                        Validacao.receita();
-                        Salvar.cadastroCliente.add("omeprezol");
+                        Validacao.receitaOmeprazol();
                 break;
                 case "benegripe":
                         Medicamento.benegripe();
@@ -42,8 +41,7 @@ public class Interacao{
                     //Prescrição médica
                 case "ozempic":
                         Medicamento.ozempic();
-                        Validacao.receita();
-                        Salvar.cadastroCliente.add("ozempic");
+                        Validacao.receitaOzempic();
                 break;
                 case "strepsils":
                         Medicamento.strepsils();
@@ -63,14 +61,13 @@ public class Interacao{
                     //Prescrição médica
                 case "prednisona":
                         Medicamento.prednisona();
-                        Validacao.receita();
-                        Salvar.cadastroCliente.add("prednisona");
+                        Validacao.receitaPrednisona();
                 break;
                     //Prescrição médica
                 case "fluoxetina":
                         Medicamento.fluoxetina();
-                        Validacao.receita();
-                        Salvar.cadastroCliente.add("fluoxetina");
+                        Validacao.receitaFluoxetina();
+                        
                 break;
                 case "kit universitario":
                         Medicamento.kitUniversitario();

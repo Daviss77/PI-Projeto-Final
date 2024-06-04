@@ -50,16 +50,17 @@ static void remover(){
     }while(!resposta == false);
 }
         static void limparArquivo(){
-            System.out.println("Deseja limpar o arquivo?");
-            boolean resposta = LerDados.lerSimNao();
-            if(resposta == true){
-             try {
-                   PrintWriter writer = new PrintWriter("C:\\\\Users\\\\daviz\\\\OneDrive\\\\Documentos\\\\codigos\\\\pi\\\\PI-Projeto-Final\\\\sistema_farmacia\\\\CadastroCliente.txt");
-                   writer.close();
-                   System.out.println("Arquivo limpo com sucesso.");
-            } catch (FileNotFoundException e)
-            {System.err.println("Erro ao limpar o arquivo: " + e.getMessage());          }
-      }
+            try 
+             {
+                PrintWriter writer = new PrintWriter("C:\\Users\\daviz\\OneDrive\\Documentos\\codigos\\pi\\PI-Projeto-Final\\sistema_farmacia\\CadastroCliente.txt");
+                writer.close();
+                System.out.println("Efetuada a limpeza de arquivo com sucesso.");
+            }
+            catch (FileNotFoundException e)
+            {
+                System.err.println("Erro ao limpar o arquivo: " + e.getMessage());
+            }
+      
     }
 
 }

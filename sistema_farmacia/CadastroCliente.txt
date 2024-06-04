@@ -1,3 +1,12 @@
-dipirona
 dorflex
-7.0
+rinosoro
+4.5
+omeprazol
+4.0
+sul
+24.0
+dorflex
+rinosoro
+7.5
+leste
+32.5

@@ -130,10 +130,10 @@ public record Medicamento(
         return medicamento;
     }
     void status(){
-        System.out.println("Dosagem do rémedio é: " + this.dosagem());
-        System.out.println("Modo de uso: " + this.modoDeUSo());
-        System.out.println("Cor da tarja: " + this.corTarja());
-        System.out.println("Quantidade " + this.quantidade());
+        System.out.println("  DOSAGEM DO REMÉDIO: " + this.dosagem());
+        System.out.println("  MODO DE USO: " + this.modoDeUSo());
+        System.out.println("  COR DA TARJA: " + this.corTarja());
+        System.out.println("  QUANTIDADE: " + this.quantidade());
     }
 }
 }

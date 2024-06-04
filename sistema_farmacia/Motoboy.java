@@ -57,8 +57,8 @@ public class Motoboy {
         statusEntrega();
     }
     public void statusEntrega(){
-        System.out.println("Estimativa de entrega para região " + this.tempo + " minutos.");
-        System.out.println("Frete para região " + this.frete + " reais.");
-        System.out.println("O valor total da compra foi de " + this.contaTotal + " reais.");
+        System.out.println(" ESTIMATIVA DE ENTREGA PARA REGIÃO É DE ( " + this.tempo + " MINUTOS ).\n");
+        System.out.println(" FRETE PARA REGIÃO ( " + this.frete + " REAIS ).\n");
+        System.out.println(" O VALOR TOTAL DA COMPRA FOI DE ( " + this.contaTotal + " REAIS. )");
     }
 }
