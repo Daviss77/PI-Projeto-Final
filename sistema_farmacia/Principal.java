@@ -82,13 +82,18 @@ public class Principal{
         while(!entradaInvalida2){
             System.out.print("Telefone: ");
             novoUsuario.telefone = LerDados.lerTexto();
+            if(novoUsuario.telefone.length() == 11){
             try{
                Long.parseLong(novoUsuario.telefone);
                 entradaInvalida2 = true;
+                
             }catch (NumberFormatException e ){
                     System.out.println("Erro! Digite números inteiros");
             }
+        } else{
+            System.out.println("Digite 11 números");
         }
+    }
         return novoUsuario;
     }
     public static boolean validarEmail(String email) {

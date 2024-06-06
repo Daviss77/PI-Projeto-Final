@@ -15,8 +15,7 @@ public class Interacao{
             System.out.println("Escreva ( FINALIZAR ) para fechar o sistema de compras");
             System.out.println("Escreva ( CARRINHO ) para mostrar os remédios escolhidos");
             System.out.println("Escreva os remédios que deseja:");
-            escolha = LerDados.lerTexto();
-            escolha = escolha.toLowerCase();
+            escolha = LerDados.lerTexto().toLowerCase();
             switch (escolha) {
                 case "dipirona":
                 Medicamento.dipirona();
